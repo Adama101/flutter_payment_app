@@ -3,8 +3,8 @@ import 'package:mest_payments_app/core/app_export.dart';
 import 'package:mest_payments_app/widgets/custom_elevated_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnboardingThreeScreen extends StatelessWidget {
-  const OnboardingThreeScreen({Key? key})
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({Key? key})
       : super(
           key: key,
         );
@@ -82,6 +82,9 @@ class OnboardingThreeScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildNextButton(BuildContext context) {
     return CustomElevatedButton(
+      onPressed: (){
+        Navigator.pushNamed(context, '/sign_in_screen');
+      },
       text: "Next",
       margin: EdgeInsets.only(
         left: 20.h,

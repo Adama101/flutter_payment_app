@@ -62,16 +62,30 @@ class SignUpScreen extends StatelessWidget {
                   SizedBox(height: 38.v),
                   _buildSignUp(context),
                   SizedBox(height: 27.v),
-                  RichText(
-                      text: TextSpan(children: [
-                        TextSpan(
-                            text: "Already have an account. ",
-                            style: CustomTextStyles.bodyMediumffa2a2a7),
-                        TextSpan(
-                            text: "Sign Up",
-                            style: CustomTextStyles.titleSmallff0066ff)
-                      ]),
-                      textAlign: TextAlign.left),
+
+                  //Gave the Text a gesture detector
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/sign_in_screen");
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                  text: "Already have an account. ",
+                                  style: CustomTextStyles.bodyMediumffa2a2a7),
+                              TextSpan(
+                                  mouseCursor:
+                                      MaterialStateMouseCursor.clickable,
+                                  text: "Sign In",
+                                  style: CustomTextStyles.titleSmallff0066ff)
+                            ]),
+                            textAlign: TextAlign.left),
+                      ],
+                    ),
+                  ),
                   SizedBox(height: 5.v)
                 ]))));
   }
@@ -92,7 +106,7 @@ class SignUpScreen extends StatelessWidget {
   Widget _buildFullName(BuildContext context) {
     return CustomTextFormField(
         controller: fullNameController,
-        hintText: "Tanya Myroniuk",
+        hintText: "Nunya Tomey",
         prefix: Container(
             margin: EdgeInsets.only(right: 15.h, bottom: 11.v),
             child: CustomImageView(
@@ -106,7 +120,7 @@ class SignUpScreen extends StatelessWidget {
   Widget _buildPhoneNumber(BuildContext context) {
     return CustomTextFormField(
         controller: phoneNumberController,
-        hintText: "+8801712663389",
+        hintText: "+233712663389",
         prefix: Container(
             margin: EdgeInsets.only(top: 1.v, right: 16.h, bottom: 11.v),
             child: CustomImageView(
@@ -121,7 +135,7 @@ class SignUpScreen extends StatelessWidget {
   Widget _buildEmail(BuildContext context) {
     return CustomTextFormField(
         controller: emailController,
-        hintText: "Tanya Myroniuk@gmail.com",
+        hintText: "MrTomey@gmail.com",
         prefix: Container(
             margin: EdgeInsets.only(right: 16.h, bottom: 11.v),
             child: CustomImageView(
@@ -153,7 +167,7 @@ class SignUpScreen extends StatelessWidget {
         obscureText: true);
   }
 
-  /// Section Widget
+  /// Section Widget for Sign Up Button
   Widget _buildSignUp(BuildContext context) {
     return CustomElevatedButton(text: "Sign Up");
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mest_payments_app/core/app_export.dart';
-import 'package:mest_payments_app/presentation/statistics_page/statistics_page.dart';
+import 'package:mest_payments_app/screens/statistics_page/statistics_page.dart';
 import 'package:mest_payments_app/widgets/app_bar/appbar_leading_iconbutton.dart';
 import 'package:mest_payments_app/widgets/app_bar/appbar_title.dart';
 import 'package:mest_payments_app/widgets/app_bar/appbar_trailing_iconbutton.dart';

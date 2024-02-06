@@ -37,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
                             child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Tanya Myroniuk",
+                                  Text("Nunya Tonney",
                                       style: CustomTextStyles.titleMedium17),
                                   SizedBox(height: 4.v),
                                   Text("Senior Designer",

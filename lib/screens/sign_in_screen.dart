@@ -46,7 +46,7 @@ class SignInScreen extends StatelessWidget {
                               SizedBox(height: 13.v),
                               CustomTextFormField(
                                   controller: emailController,
-                                  hintText: "TanyaMyroniuk@gmail.com",
+                                  hintText: "NunyaTomey@gmail.com",
                                   textInputType: TextInputType.emailAddress,
                                   prefix: Container(
                                       margin: EdgeInsets.only(
@@ -90,23 +90,38 @@ class SignInScreen extends StatelessWidget {
                                   obscureText: true),
                               SizedBox(height: 38.v),
                               CustomElevatedButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, "/profile_screen");
+                                  },
                                   text: "Sign In",
                                   buttonTextStyle: CustomTextStyles
                                       .titleSmallInterWhiteA700),
                               SizedBox(height: 27.v),
-                              RichText(
-                                  text: TextSpan(children: [
-                                    TextSpan(
-                                        text: "I’m a new user.",
-                                        style: CustomTextStyles
-                                            .bodyMediumffa2a2a7),
-                                    TextSpan(text: " "),
-                                    TextSpan(
-                                        text: "Sign In",
-                                        style:
-                                            CustomTextStyles.titleSmallff0066ff)
-                                  ]),
-                                  textAlign: TextAlign.left),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, "/sign_up_screen");
+                                },
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    RichText(
+                                        text: TextSpan(children: [
+                                          TextSpan(
+                                              text: "I’m a new user.",
+                                              style: CustomTextStyles
+                                                  .bodyMediumffa2a2a7),
+                                          TextSpan(text: " "),
+                                          TextSpan(
+                                            mouseCursor: MaterialStateMouseCursor.clickable,
+                                              text: "Sign Up",
+                                              style: CustomTextStyles
+                                                  .titleSmallff0066ff)
+                                        ]),
+                                        textAlign: TextAlign.left),
+                                  ],
+                                ),
+                              ),
                               SizedBox(height: 5.v)
                             ])))))));
   }
@@ -125,6 +140,6 @@ class SignInScreen extends StatelessWidget {
 
   /// Navigates back to the previous screen.
   onTapArrowLeft(BuildContext context) {
-    Navigator.pop(context);
+    Navigator.pop(context, '/splash_screen');
   }
 }

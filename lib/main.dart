@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           theme: theme,
           title: 'mest_payments_app',
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.onboardingThreeScreen,
+          initialRoute: '/splash_screen',
           routes: AppRoutes.routes,
         );
       },
